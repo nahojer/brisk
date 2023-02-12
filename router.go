@@ -16,7 +16,7 @@ type Router struct {
 	// NotFoundHandler is the handler to call when no routes match. By default
 	// uses a handler that writes status code 404 to the HTTP header.
 	NotFoundHandler Handler
-	// ErrorHandler is the handler to call when a [Handler] returns a non-nil
+	// ErrorHandler is the function to call when a Handler returns a non-nil
 	// error. By default is nil and does nothing.
 	ErrorHandler func(w http.ResponseWriter, r *http.Request, err error)
 	mw           []Middleware
