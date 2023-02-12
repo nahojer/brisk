@@ -70,6 +70,11 @@ func (r *Router) Get(pattern string, h Handler, mw ...Middleware) {
 	r.Handle(http.MethodGet, pattern, h, mw...)
 }
 
+// Options calls Handle("OPTIONS", pattern, h, mw...).
+func (r *Router) Options(pattern string, h Handler, mw ...Middleware) {
+	r.Handle(http.MethodOptions, pattern, h, mw...)
+}
+
 // Post calls Handle("PATCH", pattern, h, mw...).
 func (r *Router) Patch(pattern string, h Handler, mw ...Middleware) {
 	r.Handle(http.MethodPatch, pattern, h, mw...)

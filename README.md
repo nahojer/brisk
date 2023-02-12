@@ -41,7 +41,7 @@ router.ErrorHandler = func(w http.ResponseWriter, r *http.Request, err error) {
   h := func(_ http.ResponseWriter, _ *http.Request) error { 
     return nil 
   }
-  router.Handle(http.MethodOptions, "/...", h)
+  router.Options("/...", h)
 }
 
 // API version 1 routes
